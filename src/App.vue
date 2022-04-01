@@ -1,7 +1,12 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/sandwich">Sandwichs</router-link> |
+    <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
+    <router-link to="/assiette">Assièttes</router-link> |
+    <router-link to="/accomp">Accompagnements</router-link> |
+    <router-link to="/about">Contact</router-link>
+
   </nav>
   <router-view/>
 </template>
