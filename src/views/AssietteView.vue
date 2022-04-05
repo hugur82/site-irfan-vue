@@ -1,21 +1,21 @@
 <template>
   <h1>This is Assiettes page</h1>
-    <ul>
-      <div class="about" v-for="assiette,idx in foncAssiette" :key="idx">
-        <li> {{assiette.title}} : {{assiette.prix}} €</li>
-      </div>
-    </ul>
+    <compAssiette />
 </template>
 
 <script>
+import compAssiette from '@/components/compAssiette.vue'
 
 export default {
   name:"AssietteView",
-  computed:{
-    foncAssiette(){
-      return this.$store.getters.getAssiette;
+  components:{
+    compAssiette
+  },
+  computed: {
+        foncAssiette(){
+            return this.$store.getters.getAssiette;
+        }
     }
-  }
 }
 </script>
 
