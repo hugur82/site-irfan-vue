@@ -3,7 +3,7 @@
         <div class="boucleProduits" v-for="assietteIdx,idx of foncAssiette" :key="idx">
             <div class="carte">
                 <div class="cardImg">
-                image 
+                 <img width="210" height="140" :src="require('@/assets/img/' + assietteIdx.url )" />
                 </div>
                 <div class="cardTitre">
                     {{assietteIdx.title}}
@@ -25,6 +25,11 @@
 <script>
 export default {
     name:'compAssiette',
+    data(){
+        return {
+            link:""
+        }
+    },
     computed: {
         foncAssiette(){
             return this.$store.getters.getAssiette;
