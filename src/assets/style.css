@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #262626;
+}
+.container{
+    margin: 10px;
+    width:90%;
+    display: flex;
+    flex-wrap:  wrap;
+    justify-content:space-around ;
+    gap:12px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border:solid white 1px; */
+}
+.boucleProduits{
+    width: 215px;
+}
+.carte{
+    width: 210px;
+    height: 250px;
+    background: #f1f1f1;
+    display:grid;
+    grid-template: repeat(2,70px) 30px repeat(2,40px)  / repeat(3,70px);
+    border-radius: 5px;
+    border:solid 4px rgba(173, 18, 18, 0.884);
+}
+.cardImg{
+    /* image 210*140px */
+    grid-area: 1/1/3/4;
+}
+.cardTitre{
+    grid-area: 3/1/4/4;
+    color:brown;
+}
+.cardDesc{
+    grid-area: 4/1/6/4;
+    color:darkblue;
+    font-size: 35px;
+}
