@@ -1,18 +1,16 @@
 <template>
    <ul>
-      <div class="about" v-for="acc2,idx2 of foncAccomp2" v-bind:key="idx2">
-        <li> {{acc2.title}} : {{acc2.prix}} €</li>
+      <div class="about" v-for="acc,idx of foncAccomp" v-bind:key="idx">
+        <li> {{acc.title}} : {{acc.prix}} €</li>
       </div>
-    </ul>
-    
-  
+    </ul>  
 </template>
 
 <script>
 export default {
   name: 'compAccomp',
   computed:{
-    foncAccomp2(){
+    foncAccomp(){
       return this.$store.getters.getAccomp;
     }
   }

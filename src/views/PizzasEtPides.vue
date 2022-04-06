@@ -1,6 +1,5 @@
 <template>
 <compPizza />
-
 </template>
 
 <script>
@@ -11,7 +10,6 @@ export default {
   components:{
     compPizza
   }
-  
 }
 </script>
 

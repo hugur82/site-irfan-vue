@@ -10,12 +10,8 @@ export default {
   name:"AssietteView",
   components:{
     compAssiette
-  },
-  computed: {
-        foncAssiette(){
-            return this.$store.getters.getAssiette;
-        }
-    }
+  }
+  
 }
 </script>
 

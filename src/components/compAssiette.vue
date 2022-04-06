@@ -1,10 +1,25 @@
 <template>
-    <ul>
+    <div class='container'>   
+        <div class="boucleProduits" v-for="assietteIdx,idx of foncAssiette" :key="idx">
+            <div class="carte">
+                <div class="cardImg">
+                image 
+                </div>
+                <div class="cardTitre">
+                    {{assietteIdx.title}}
+                </div>
+                
+                <div class="cardDesc">
+                    {{assietteIdx.prix}} €
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <ul>
         <div v-for="assietteIdx,idx of foncAssiette" :key="idx">
             <li> {{assietteIdx.title}} : {{assietteIdx.prix}} € </li>
         </div>
-    </ul>
-
+    </ul> -->
 </template>
 
 <script>
