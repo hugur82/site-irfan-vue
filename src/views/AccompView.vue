@@ -1,6 +1,7 @@
 <template>
   <h1>This is Accomp page</h1>
    <compAccomp />
+   
 </template>
 
 <script>

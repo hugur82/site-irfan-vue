@@ -25,11 +25,7 @@
 <script>
 export default {
     name:'compAssiette',
-    data(){
-        return {
-            link:""
-        }
-    },
+    
     computed: {
         foncAssiette(){
             return this.$store.getters.getAssiette;
