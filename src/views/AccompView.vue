@@ -7,6 +7,7 @@
 <script>
 import compAccomp from '@/components/compAccomp.vue'
 
+
 export default {
   name:"AccompView",
   components: {
