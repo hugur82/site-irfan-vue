@@ -1,15 +1,22 @@
 <template>
   <h1>This is Assiettes page</h1>
-    <compAssiette />
+  <div class="container">
+    <compCard v-for="itemAssiette,idx of foncAssiette" :key="idx" :titre="itemAssiette.title" :prix="itemAssiette.prix" :url="require('@/assets/img/'+itemAssiette.url)"/>
+    </div>
 </template>
 
 <script>
-import compAssiette from '@/components/compAssiette.vue'
+import compCard from '@/components/compCard.vue'
 
 export default {
   name:"AssietteView",
   components:{
-    compAssiette
+    compCard
+  },
+  computed:{
+    foncAssiette(){
+      return this.$store.getters.getAssiette;
+    }
   }
   
 }

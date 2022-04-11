@@ -1,16 +1,23 @@
 <template>
-<compSand />
+  <div class="container">
+    <compCard v-for="itemSand,idx of foncSand" :key="idx" :titre="itemSand.title" :prix="itemSand.prix" :url="require('@/assets/img/'+itemSand.url)" />
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import compSand from '@/components/compSand.vue'
+import compCard from '@/components/compCard.vue'
 
 export default {
   name: "SandwichView",
   components:{
-    compSand
-  }
+    compCard
+  },
+  computed: {
+    foncSand(){
+      return this.$store.getters.getSandwichs;
+    }
+  },
 }
 </script>
 

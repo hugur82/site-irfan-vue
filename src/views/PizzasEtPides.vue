@@ -1,15 +1,25 @@
 <template>
-<compPizza />
+  <div class="container">
+      <compCard v-for="itemPizza,idx in foncPizza" :key="idx"  :titre="itemPizza.title" :prix="itemPizza.prix" :url="require('@/assets/img/'+itemPizza.url)"/> 
+    
+  </div>
+
+<!-- <compPizza /> -->
 </template>
 
 <script>
-import compPizza from '@/components/compPizza.vue'
+ import compCard from '@/components/compCard.vue'
 
 export default {
   name:"PizzasEtPides",
-  components:{
-    compPizza
-  }
+   components:{
+     compCard
+   },
+computed:{
+    foncPizza(){
+      return this.$store.getters.getPizza;
+    }
+}
 }
 </script>
 
