@@ -1,10 +1,9 @@
 <template>
+<h1>Nos Pizzas et Pides</h1>
   <div class="container">
       <compCard v-for="itemPizza,idx in foncPizza" :key="idx"  :titre="itemPizza.title" :prix="itemPizza.prix" :url="require('@/assets/img/'+itemPizza.url)"/> 
     
   </div>
-
-<!-- <compPizza /> -->
 </template>
 
 <script>

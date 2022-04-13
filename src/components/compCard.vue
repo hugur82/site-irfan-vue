@@ -1,6 +1,7 @@
 <template>
     <div class="boucleProduits">
-        <div class="carte">
+         <button @click="effacer">toggle</button>
+        <div class="carte" v-if="showItem" >
             <div class="cardImg">
                 <img width="210" height="140" :src="url"> 
             </div>
@@ -11,6 +12,7 @@
                 {{prix}}
             </div>    
         </div>
+       
     </div> 
 </template>
 
@@ -28,6 +30,16 @@ export default {
             default:"url",
        }
 
+    },
+    data() {
+        return {
+            showItem:true
+        }
+    },
+    methods: {
+        effacer(){
+            this.showItem=!this.showItem;
+        }
     },
     
 }

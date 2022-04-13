@@ -1,4 +1,5 @@
 <template>
+<h1>Nos Sandwichs</h1>
   <div class="container">
     <compCard v-for="itemSand,idx of foncSand" :key="idx" :titre="itemSand.title" :prix="itemSand.prix" :url="require('@/assets/img/'+itemSand.url)" />
   </div>
