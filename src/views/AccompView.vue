@@ -1,7 +1,7 @@
 <template>
   <h1>This is Accomp page</h1>
-  <div class="container">
-   <compCard v-for="itemAccomp, idx of foncAccomp" :key="idx" :titre="itemAccomp.title" :prix="itemAccomp.prix" :url="require('@/assets/img/'+itemAccomp.url)" />
+  <div class="containerCard">
+   <compCard v-for="itemAccomp, idx of this.$store.getters.getAccomp" :key="idx" :titre="itemAccomp.title" :prix="itemAccomp.prix" :url="require('@/assets/img/'+itemAccomp.url)" />
   </div>
 </template>
 
@@ -13,10 +13,5 @@ export default {
   components: {
     compCard
   },
-  computed:{
-    foncAccomp(){
-      return this.$store.getters.getAccomp;
-    }
-  }
-}
+ }
 </script>

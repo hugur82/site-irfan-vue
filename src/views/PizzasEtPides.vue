@@ -1,7 +1,7 @@
 <template>
 <h1>Nos Pizzas et Pides</h1>
-  <div class="container">
-      <compCard v-for="itemPizza,idx in foncPizza" :key="idx"  :titre="itemPizza.title" :prix="itemPizza.prix" :url="require('@/assets/img/'+itemPizza.url)"/> 
+  <div class="containerCard">
+      <compCard v-for="itemPizza,idx in this.$store.getters.getPizza" :key="idx"  :titre="itemPizza.title" :prix="itemPizza.prix" :url="require('@/assets/img/'+itemPizza.url)"/> 
     
   </div>
 </template>
@@ -13,17 +13,10 @@ export default {
   name:"PizzasEtPides",
    components:{
      compCard
-   },
-computed:{
-    foncPizza(){
-      return this.$store.getters.getPizza;
-    }
-}
+   },  
 }
 </script>
 
 <style scoped>
-ul{
-  list-style: none;
-}
+
 </style>

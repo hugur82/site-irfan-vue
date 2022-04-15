@@ -3,7 +3,11 @@ body {
     padding: 0px;
     background: #c3bdc7de;
 }
-.container{
+
+
+
+/*-------------Mise en forme des cards-----------*/
+.containerCard{
     margin: 10px;
     width:90%;
     display: flex;
@@ -49,4 +53,15 @@ body {
     grid-area: 4/1/6/4;
     color:darkblue;
     font-size: 35px;
+}
+
+/*-------------Responsive smartphone-----------*/
+@media screen and (max-width:600px)  {
+.carte{
+    transform: scale(0.7);
+}
+.carte:hover {
+    transform:scale(1);
+}
+
 }

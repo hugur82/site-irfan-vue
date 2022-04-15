@@ -1,7 +1,8 @@
 <template>
+
 <h1>Nos Sandwichs</h1>
-  <div class="container">
-    <compCard v-for="itemSand,idx of foncSand" :key="idx" :titre="itemSand.title" :prix="itemSand.prix" :url="require('@/assets/img/'+itemSand.url)" />
+  <div class="containerCard">
+    <compCard v-for="itemSand,idx of this.$store.getters.getSandwichs" :key="idx" :titre="itemSand.title" :prix="itemSand.prix" :url="require('@/assets/img/'+itemSand.url)" />
   </div>
 </template>
 
@@ -14,16 +15,8 @@ export default {
   components:{
     compCard
   },
-  computed: {
-    foncSand(){
-      return this.$store.getters.getSandwichs;
-    }
-  },
 }
 </script>
 
 <style scoped>
-ul{
-  list-style: none;
-}
 </style>

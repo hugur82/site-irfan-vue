@@ -1,15 +1,44 @@
 <template>
-  <nav>
+    <div id="navigation-icon" v-if="mobileView">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav v-if="!mobileView">
     <router-link to="/">Home</router-link> |
     <router-link to="/sandwich">Sandwichs</router-link> |
     <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
     <router-link to="/assiette">Assièttes</router-link> |
     <router-link to="/accomp">Accompagnements</router-link> |
     <router-link to="/about">Contact</router-link>
-
-  </nav>
-  <router-view/>
+    </nav>
+    <router-view/>
+ 
 </template>
+
+<script>
+  export default{
+    data(){
+      return {
+        mobileView:false,
+        showNav:false,
+      }
+    },
+    methods: {
+      handleView(){
+        this.mobileView = window.innerWidth < 600 ;
+      }
+    },
+    mounted() {
+      this.handleView(),
+      window.addEventListener('resize',()=>{
+        this.mobileView = window.innerWidth < 600 ;
+        // console.log(window.innerWidth);
+      })
+    },
+    
+    
+  }
+</script>
 
 <style lang="scss">
 @import './assets/style.css' ;
@@ -22,8 +51,21 @@
   color: rgb(53, 50, 47);
 }
 
+#navigation-icon{
+  padding: 10px 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+
+  i {
+    font-size: 2rem;
+  }
+
+}
+
 nav {
-  padding: 30px;
+  height: 50px;
+  padding: 10px;
+  
 
   a {
     font-weight: bold;

@@ -8,7 +8,7 @@
                 {{titre}}
             </div>
             <div class="cardDesc">
-                {{prix}}
+                {{prix}} €
             </div>    
         </div>
        
