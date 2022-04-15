@@ -1,39 +1,61 @@
 <template>
-    <div id="navigation-icon" v-if="mobileView">
-      <i class="fas fa-bars"></i>
-    </div>
 
-    <nav v-if="!mobileView">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/sandwich">Sandwichs</router-link> |
-    <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
-    <router-link to="/assiette">Assièttes</router-link> |
-    <router-link to="/accomp">Accompagnements</router-link> |
-    <router-link to="/about">Contact</router-link>
-    </nav>
-    <router-view/>
- 
+    <navigationMobile v-if="mobileView" />
+    <div class="content" :class="{'open':showNav}">
+      <div class="top-bar">
+        <div id="navigation-icon" @click="commShowNav" v-if="mobileView">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav v-if="!mobileView">
+          <router-link to="/">Home</router-link> |
+          <router-link to="/sandwich">Sandwichs</router-link> |
+          <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
+          <router-link to="/assiette">Assièttes</router-link> |
+          <router-link to="/accomp">Accompagnements</router-link> |
+          <router-link to="/about">Contact</router-link>
+        </nav>
+        <router-view/>
+      </div>
+    </div>
 </template>
 
 <script>
+import { mapState } from "vuex"
+import navigationMobile from '@/components/navigationMobile.vue'
+  
+
   export default{
     data(){
       return {
         mobileView:false,
-        showNav:false,
+        resolution:750
+      }
+    },
+    components:{
+      navigationMobile,
+    },
+    computed: {
+      ...mapState(['showNav']),   
+      ShowNav(){
+          return this.$store.state.showNav
       }
     },
     methods: {
+      commShowNav(){
+        this.$store.commit('COMMUT_SHOWNAV')
+      },
       handleView(){
-        this.mobileView = window.innerWidth < 600 ;
+        this.mobileView = window.innerWidth < this.resolution ;
+        if (this.mobileView==false && this.$store.state.showNav==true){
+          this.commShowNav()
+        }
       }
     },
     mounted() {
       this.handleView(),
       window.addEventListener('resize',()=>{
-        this.mobileView = window.innerWidth < 600 ;
-        // console.log(window.innerWidth);
-      })
+      this.handleView()
+      });
     },
     
     
@@ -43,6 +65,20 @@
 <style lang="scss">
 @import './assets/style.css' ;
 
+.content {
+  position : absolute;
+  top: 10px;
+  width: calc(100% - 60px);
+  min-height:400px ;
+  padding: 20px;
+  background-color: rgb(131, 153, 199);
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: 1000ms cubic-bezier(.58,-0.49,.6,1.33);
+}
+.open{
+  transform: translateX(300px);
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,6 +88,7 @@
 }
 
 #navigation-icon{
+  width: 30px;
   padding: 10px 10px 20px;
   margin-right: 10px;
   cursor: pointer;
@@ -68,11 +105,12 @@ nav {
   
 
   a {
+    text-decoration: none;
     font-weight: bold;
-    color: #1b8af8;
+    color: #251f5e;
 
     &.router-link-exact-active {
-      color: #2f21a7;
+      color: #8d2591;
     }
   }
 }

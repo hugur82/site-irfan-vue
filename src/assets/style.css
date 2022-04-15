@@ -20,6 +20,7 @@ body {
 }
 .boucleProduits{
     width: 215px;
+    height:auto;
     
 }
 .carte{
@@ -58,10 +59,10 @@ body {
 /*-------------Responsive smartphone-----------*/
 @media screen and (max-width:600px)  {
 .carte{
-    transform: scale(0.7);
+    transform: scale(0.85);
 }
 .carte:hover {
-    transform:scale(1);
+    transform:scale(1.1);
 }
 
 }
