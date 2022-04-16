@@ -2,10 +2,10 @@
 
     <navigationMobile v-if="mobileView" />
     <div class="content" :class="{'open':showNav}">
-      <div class="top-bar">
         <div id="navigation-icon" @click="commShowNav" v-if="mobileView">
           <i class="fas fa-bars"></i>
         </div>
+
         <nav v-if="!mobileView">
           <router-link to="/">Home</router-link> |
           <router-link to="/sandwich">Sandwichs</router-link> |
@@ -14,8 +14,9 @@
           <router-link to="/accomp">Accompagnements</router-link> |
           <router-link to="/about">Contact</router-link>
         </nav>
-        <router-view/>
-      </div>
+        
+          <router-view/>
+            
     </div>
 </template>
 
@@ -35,10 +36,7 @@ import navigationMobile from '@/components/navigationMobile.vue'
       navigationMobile,
     },
     computed: {
-      ...mapState(['showNav']),   
-      ShowNav(){
-          return this.$store.state.showNav
-      }
+      ...mapState(['showNav']),
     },
     methods: {
       commShowNav(){
@@ -63,18 +61,20 @@ import navigationMobile from '@/components/navigationMobile.vue'
 </script>
 
 <style lang="scss">
-@import './assets/style.css' ;
+@import './assets/style.scss' ;
 
 .content {
   position : absolute;
   top: 10px;
-  width: calc(100% - 60px);
+  left:5px;
+  right: 5px;
+  width: auto;
   min-height:400px ;
   padding: 20px;
   background-color: rgb(131, 153, 199);
   border-radius: 30px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: 1000ms cubic-bezier(.58,-0.49,.6,1.33);
+  transition: 1500ms cubic-bezier(.58,-0.49,.6,1.33);
 }
 .open{
   transform: translateX(300px);
@@ -110,8 +110,9 @@ nav {
     color: #251f5e;
 
     &.router-link-exact-active {
-      color: #8d2591;
+      color: #308d18;
     }
   }
 }
+
 </style>

@@ -9,6 +9,7 @@
             <li><router-link @click="commShowNav" to="/accomp">Accompagnements</router-link></li>
             <li><router-link @click="commShowNav" to="/about">Contact</router-link></li>
         </ul>
+    
     </div>
     
 </template>
@@ -20,9 +21,6 @@ export default {
     name:'navigationMobile',
     computed: {
         ...mapState(['showNav']),
-        ShowNav(){
-        return this.$store.state.showNav
-      }
     },
     methods: {
         commShowNav(){
@@ -35,7 +33,8 @@ export default {
 <style lang="scss" scoped>
 
 #navigationMobile{
-    padding: 20px 0 0 0 ;
+    padding: 15px 0 0 0 ;
+    position:fixed;
 
     ul {
         text-decoration: none;
