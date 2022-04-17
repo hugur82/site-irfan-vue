@@ -1,5 +1,5 @@
 <template>
-
+<div class="viewContainer">
 <h1>Nos Sandwichs</h1>
   <div class="containerCard">
     <compCard v-for="itemSand,idx of this.$store.getters.getSandwichs" 
@@ -7,6 +7,7 @@
     :titre="itemSand.title" 
     :prix="itemSand.prix" 
     :url="require('@/assets/img/'+itemSand.url)" />
+  </div>
   </div>
 </template>
 

@@ -91,11 +91,10 @@ transform:  scale(0.01);
   right: 5px;
   width: auto;
   min-height:100vh ;
-  padding: 20px;
-  
+  padding: 0px 20px;
   background: rgb(44,126,238);
   border-radius: 30px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(43, 32, 187, 0.2);
   transition: 900ms cubic-bezier(.62,.55,.74,1.33);
   
 }
@@ -112,30 +111,34 @@ transform:  scale(0.01);
 }
 
 #navigation-icon{
-  width: 30px;
-  padding: 10px 10px 20px;
-  margin-right: 10px;
+  z-index: 1;
+  background: rgba(65, 65, 65, 0.301);
+  font-size: xx-large;
+  width: fit-content;
+  height: fit-content;
   cursor: pointer;
-
+  position: absolute;
+  top:25px;
   i {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
 }
 
 nav {
-  
-  padding: 10px;
-  background: rgba(196, 196, 196, 0.449);
-  
+  margin: 10px auto 0px auto;
+  padding: 10px ;
+  background: rgba(255, 255, 255, 0.507);
+  max-width: 850px;
+  border-radius: 25px;
+  cursor: default;
 
   a {
-    
-    backdrop-filter: blur(2px);
+    cursor: pointer;
     text-decoration: none;
     font-size: 18px;
     font-weight: 100;
-    color: #2e5d69;
+    color: #15191a;
     &:hover{
       text-decoration: underline;
     }

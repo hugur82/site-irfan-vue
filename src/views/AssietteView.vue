@@ -1,4 +1,5 @@
 <template>
+<div class="viewContainer">
   <h1>This is Assiettes page</h1>
   <div class="containerCard">
     <compCard v-for="itemAssiette,idx of this.$store.getters.getAssiette" 
@@ -6,6 +7,7 @@
     :titre="itemAssiette.title" 
     :prix="itemAssiette.prix" 
     :url="require('@/assets/img/'+itemAssiette.url)"/>
+  </div>
   </div>
 </template>
 

@@ -42,24 +42,24 @@ export default {
         width: 200px;
         padding-left: 40px;
         a{
-            color: rgb(25, 96, 129);
+            color: rgb(241, 241, 241);
             font-size: x-large;
             font-weight: 500;
             text-decoration: none;
             cursor: pointer;
             &:hover {
-                color: rgb(185, 45, 45);
+                text-decoration:  underline;
             }
             &.router-link-exact-active {
                 
-                font-weight: 900;
+                color: dodgerblue;
             }
             
         }
         
         li {
-            color: #fff;
-            font-weight: bold;
+            
+            
             margin-bottom: 20px;
             
 
