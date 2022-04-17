@@ -2,7 +2,11 @@
 
 <h1>Nos Sandwichs</h1>
   <div class="containerCard">
-    <compCard v-for="itemSand,idx of this.$store.getters.getSandwichs" :key="idx" :titre="itemSand.title" :prix="itemSand.prix" :url="require('@/assets/img/'+itemSand.url)" />
+    <compCard v-for="itemSand,idx of this.$store.getters.getSandwichs" 
+    :key="idx" 
+    :titre="itemSand.title" 
+    :prix="itemSand.prix" 
+    :url="require('@/assets/img/'+itemSand.url)" />
   </div>
 </template>
 

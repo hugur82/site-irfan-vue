@@ -1,4 +1,5 @@
 <template>
+    
     <div class="boucleProduits">
         <div class="carte">
             <div class="cardImg">

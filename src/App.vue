@@ -1,23 +1,29 @@
 <template>
 
-    <navigationMobile v-if="mobileView" />
-    <div class="content" :class="{'open':showNav}">
-        <div id="navigation-icon" @click="commShowNav" v-if="mobileView">
-          <i class="fas fa-bars"></i>
-        </div>
+<navigationMobile v-if="mobileView" />
+<div class="content" :class="{'open':showNav}">
+  <div id="navigation-icon" @click="commShowNav" v-if="mobileView">
+    <i class="fas fa-bars"></i>
+  </div>
 
-        <nav v-if="!mobileView">
-          <router-link to="/">Home</router-link> |
-          <router-link to="/sandwich">Sandwichs</router-link> |
-          <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
-          <router-link to="/assiette">Assièttes</router-link> |
-          <router-link to="/accomp">Accompagnements</router-link> |
-          <router-link to="/about">Contact</router-link>
-        </nav>
-        
-          <router-view/>
-            
-    </div>
+  <nav v-if="!mobileView">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/sandwich">Sandwichs</router-link> |
+    <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
+    <router-link to="/assiette">Assièttes</router-link> |
+    <router-link to="/accomp">Accompagnements</router-link> |
+    <router-link to="/about">Contact</router-link>
+  </nav>
+
+  <router-view v-slot="{ Component, route }">
+      <Transition name="fade" mode="out-in">
+        <div :key="route.name">  
+          <component :is="Component"></component>
+        </div>
+      </Transition>
+    </router-view>
+    
+</div>
 </template>
 
 <script>
@@ -63,24 +69,42 @@ import navigationMobile from '@/components/navigationMobile.vue'
 <style lang="scss">
 @import './assets/style.scss' ;
 
+.fade-enter-active  {
+transition: 700ms cubic-bezier(.63,.49,.44,.94);
+}
+.fade-leave-active {
+transition: 700ms cubic-bezier(.62,-0.01,.86,.39);
+
+}
+.fade-enter-from  {
+opacity: 0;
+transform: scale(0.01);
+}
+.fade-leave-to {
+   opacity: 0;
+transform:  scale(0.01);
+}
 .content {
   position : absolute;
   top: 10px;
   left:5px;
   right: 5px;
   width: auto;
-  min-height:400px ;
+  min-height:100vh ;
   padding: 20px;
-  background-color: rgb(131, 153, 199);
+  
+  background: rgb(44,126,238);
   border-radius: 30px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: 1500ms cubic-bezier(.58,-0.49,.6,1.33);
+  transition: 900ms cubic-bezier(.62,.55,.74,1.33);
+  
 }
 .open{
-  transform: translateX(300px);
+  transform: translateX(300px); 
+  
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:  Geneva, Tahoma, sans-serif,arial, Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -100,19 +124,29 @@ import navigationMobile from '@/components/navigationMobile.vue'
 }
 
 nav {
-  height: 50px;
+  
   padding: 10px;
+  background: rgba(196, 196, 196, 0.449);
   
 
   a {
+    
+    backdrop-filter: blur(2px);
     text-decoration: none;
-    font-weight: bold;
-    color: #251f5e;
+    font-size: 18px;
+    font-weight: 100;
+    color: #2e5d69;
+    &:hover{
+      text-decoration: underline;
+    }
 
     &.router-link-exact-active {
-      color: #308d18;
+      font-size: 18px;
+      font-weight: 900;
+      
     }
   }
 }
+
 
 </style>

@@ -43,18 +43,25 @@ export default {
         padding-left: 40px;
         a{
             color: rgb(25, 96, 129);
+            font-size: x-large;
+            font-weight: 500;
             text-decoration: none;
+            cursor: pointer;
             &:hover {
                 color: rgb(185, 45, 45);
-                
             }
+            &.router-link-exact-active {
+                
+                font-weight: 900;
+            }
+            
         }
+        
         li {
             color: #fff;
-            font-size: x-large;
             font-weight: bold;
             margin-bottom: 20px;
-            cursor: pointer;
+            
 
             
         }
