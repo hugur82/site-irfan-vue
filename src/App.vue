@@ -94,7 +94,7 @@ transform:  scale(0.01);
   padding: 0px 20px;
   background: rgb(44,126,238);
   border-radius: 30px;
-  box-shadow: 2px 2px 2px 1px rgba(43, 32, 187, 0.2);
+  box-shadow: 2px 2px 2px 1px rgba(170, 167, 218, 0.2);
   transition: 900ms cubic-bezier(.62,.55,.74,1.33);
   
 }
@@ -112,7 +112,7 @@ transform:  scale(0.01);
 
 #navigation-icon{
   z-index: 1;
-  background: rgba(65, 65, 65, 0.301);
+  
   font-size: xx-large;
   width: fit-content;
   height: fit-content;
