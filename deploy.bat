@@ -1,17 +1,5 @@
-#!/usr/bin/env sh
 
-<<<<<<< HEAD
-set -e
 
-npm run build
-
-cd dist
-
-git init
-git add -A 
-git commit -m 'new Deployment'
-git push git@github.com:khuq/site-irfan-vue.git master:gh-pages
-=======
 # abort on errors
 set -e
 
@@ -33,6 +21,5 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:khuq/site-irfan-vue.git master:gh-pages
->>>>>>> detach
 
 cd -
