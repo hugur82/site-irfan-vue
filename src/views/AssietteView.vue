@@ -4,9 +4,7 @@
   <div class="containerCard">
     <compCard v-for="itemAssiette,idx of this.$store.getters.getAssiette" 
     :key="idx" 
-    :titre="itemAssiette.title" 
-    :prix="itemAssiette.prix" 
-    :url="require('@/assets/img/'+itemAssiette.url)"/>
+    :tabProduct="itemAssiette" />
   </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
 
     <div id="navigationMobile">
         <ul >
-            <li><router-link @click="commShowNav" to="/">Home</router-link></li>
+            <li><router-link @click="commShowNav" to="/">Accueil</router-link></li>
             <li><router-link @click="commShowNav" to="/sandwich">Sandwichs</router-link></li>
             <li><router-link @click="commShowNav" to="/pizzaPide">Pizzas and Pides</router-link></li>
             <li><router-link @click="commShowNav" to="/assiette">Assièttes</router-link></li>

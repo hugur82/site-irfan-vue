@@ -1,15 +1,15 @@
 <template>
-    
+   
     <div class="boucleProduits">
         <div class="carte">
             <div class="cardImg">
-                <img width="210" height="140" :src="url"> 
+                <img width="210" height="140" :src="require('@/assets/img/'+tabProduct.url)"> 
             </div>
             <div class="cardTitre">
-                {{titre}}
+                {{tabProduct.title}}
             </div>
             <div class="cardDesc">
-                {{prix}} €
+                {{tabProduct.prix}} €
             </div>    
         </div>
        
@@ -20,14 +20,8 @@
 export default {
     name:'compCard',
     props: {
-        titre: {
-            default:"",
-       },
-       prix: {
-            default:0,
-       },
-       url: {
-            default:"",
+       tabProduct:{
+           default:"",
        }
 
     },

@@ -7,7 +7,7 @@
   </div>
 
   <nav v-if="!mobileView">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Accueil</router-link> |
     <router-link to="/sandwich">Sandwichs</router-link> |
     <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
     <router-link to="/assiette">Assièttes</router-link> |
