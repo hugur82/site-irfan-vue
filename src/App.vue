@@ -1,7 +1,7 @@
 <template>
 
 <navigationMobile v-if="mobileView" />
-<div class="content" :class="{'open':showNav}" @click="closeShownav">
+<div class="content" :class="{'open':showNav}">
   <div id="navigation-icon" @click="commShowNav" v-if="mobileView">
     <i class="fas fa-bars"></i>
   </div>
@@ -49,11 +49,7 @@ import navigationMobile from '@/components/navigationMobile.vue'
     },
     methods: {
       commShowNav(){
-        this.$store.commit('COMMUT_SHOWNAV');
-      },
-      closeShownav(){
-        if (this.showNav==true)
-        this.$store.commit('CLOSE_SHOWNAV');
+        this.$store.commit('COMMUT_SHOWNAV')
       },
       handleView(){
         this.mobileView = window.innerWidth < this.resolution ;
@@ -125,7 +121,8 @@ transform:  scale(0.01);
 }
 
 #navigation-icon{
-  z-index: 3;  
+  z-index: 1;
+  
   font-size: xx-large;
   width: fit-content;
   height: fit-content;
