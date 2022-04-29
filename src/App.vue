@@ -1,12 +1,12 @@
 <template>
 
 <navigationMobile v-if="mobileView" />
-<div class="content" :class="{'open':showNav}">
+<div class="content" :class="{'open':showNav}" @click="closeShownav">
   <div id="navigation-icon" @click="commShowNav" v-if="mobileView">
     <i class="fas fa-bars"></i>
   </div>
 
-  <nav v-if="!mobileView">
+  <nav :class="{navFixed:navFixIsActve}" v-if="!mobileView">
     <router-link to="/">Accueil</router-link> |
     <router-link to="/sandwich">Sandwichs</router-link> |
     <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
@@ -29,11 +29,13 @@
 <script>
 import { mapState } from "vuex"
 import navigationMobile from '@/components/navigationMobile.vue'
+
   
 
   export default{
     data(){
       return {
+        navFixIsActve:false,
         mobileView:false,
         resolution:750
       }
@@ -43,25 +45,37 @@ import navigationMobile from '@/components/navigationMobile.vue'
     },
     computed: {
       ...mapState(['showNav']),
+      
     },
     methods: {
       commShowNav(){
-        this.$store.commit('COMMUT_SHOWNAV')
+        this.$store.commit('COMMUT_SHOWNAV');
+      },
+      closeShownav(){
+        if (this.showNav==true)
+        this.$store.commit('CLOSE_SHOWNAV');
       },
       handleView(){
         this.mobileView = window.innerWidth < this.resolution ;
         if (this.mobileView==false && this.$store.state.showNav==true){
           this.commShowNav()
         }
-      }
+      },
+      
     },
     mounted() {
       this.handleView(),
       window.addEventListener('resize',()=>{
       this.handleView()
       });
+      document.addEventListener('scroll',()=>{
+        if (window.scrollY> 10)
+        this.navFixIsActve=true;
+        else
+        this.navFixIsActve=false;
+      })
+
     },
-    
     
   }
 </script>
@@ -70,10 +84,10 @@ import navigationMobile from '@/components/navigationMobile.vue'
 @import './assets/style.scss' ;
 
 .fade-enter-active  {
-transition: 700ms cubic-bezier(.63,.49,.44,.94);
+transition: 680ms ease-in-out;
 }
 .fade-leave-active {
-transition: 700ms cubic-bezier(.62,-0.01,.86,.39);
+transition: 590ms cubic-bezier(.62,-0.01,.86,.39);
 
 }
 .fade-enter-from  {
@@ -111,8 +125,7 @@ transform:  scale(0.01);
 }
 
 #navigation-icon{
-  z-index: 1;
-  
+  z-index: 3;  
   font-size: xx-large;
   width: fit-content;
   height: fit-content;
@@ -124,14 +137,27 @@ transform:  scale(0.01);
   }
 
 }
-
+.navFixed{
+  position:fixed;
+  margin-top:0px;
+  top:0px;
+  left:0px;
+  right:0px;
+  max-width:none;
+  border-radius: 0px;
+  z-index: 5;
+  background: rgb(231, 229, 229);
+  transition:all ease 600ms;
+  
+}
 nav {
   margin: 10px auto 0px auto;
   padding: 10px ;
-  background: rgba(255, 255, 255, 0.507);
+  background: rgba(151, 167, 212, 0.507);
   max-width: 850px;
   border-radius: 25px;
   cursor: default;
+  transition:all ease 600ms;
 
   a {
     cursor: pointer;

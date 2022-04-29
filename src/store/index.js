@@ -90,6 +90,9 @@ export default createStore({
   mutations: {
     COMMUT_SHOWNAV(state){
       state.showNav = !state.showNav
+    },
+    CLOSE_SHOWNAV(state){
+      state.showNav = false
     }
   },
   actions: {
