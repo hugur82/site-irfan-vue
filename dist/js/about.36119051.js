@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunksite_irfan_vue"]=self["webpackChunksite_irfan_vue"]||[]).push([[443],{8546:function(n,e,t){t.r(e),t.d(e,{default:function(){return v}});var r=t(3396);const u={class:"viewContainer"},i=(0,r._)("h1",null,"Contact",-1),a=[i];function s(n,e,t,i,s,c){return(0,r.wg)(),(0,r.iD)("div",u,a)}var c={name:"AboutView"},f=t(89);const o=(0,f.Z)(c,[["render",s]]);var v=o}}]);
-//# sourceMappingURL=about.474028d2.js.map
+//# sourceMappingURL=about.36119051.js.map

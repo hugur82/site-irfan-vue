@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunksite_irfan_vue"]=self["webpackChunksite_irfan_vue"]||[]).push([[820],{288:function(e,t,n){n.r(t),n.d(t,{default:function(){return f}});var s=n(3396);const r={class:"viewContainer"},a=(0,s._)("h1",null,"Nos Pizzas et Pides",-1),i={class:"containerCard"};function u(e,t,n,u,c,o){const d=(0,s.up)("compCard");return(0,s.wg)(),(0,s.iD)("div",r,[a,(0,s._)("div",i,[((0,s.wg)(!0),(0,s.iD)(s.HY,null,(0,s.Ko)(this.$store.getters.getPizza,((e,t)=>((0,s.wg)(),(0,s.j4)(d,{key:t,tabProduct:e},null,8,["tabProduct"])))),128))])])}var c=n(1919),o={name:"PizzasEtPides",components:{compCard:c.Z}},d=n(89);const l=(0,d.Z)(o,[["render",u]]);var f=l}}]);
-//# sourceMappingURL=Pizza et pide.910c66e8.js.map
+//# sourceMappingURL=Pizza et pide.f95c2828.js.map
