@@ -3,6 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
       showNav:false,
+      mobileView:false,
       tabSandwich:[{id:1,title:"Döner Kebab Poulet",prix: 4.5,url: "assietteKebab.jpeg",description:"description"},
                       {id:2,title:"Döner Kebab Boeuf",prix: 4.5,url: "assietteKebab.jpeg",description:"description"},
                       {id:3,title:"Yufka Poulet",prix: 4.5,url: "assietteKebab.jpeg",description:"description"},
@@ -90,6 +91,9 @@ export default createStore({
   mutations: {
     COMMUT_SHOWNAV(state){
       state.showNav = !state.showNav
+    },
+    COMMUT_MOBILEVIEW(state){
+      state.mobileView = !state.mobileView
     }
   },
   actions: {

@@ -2,9 +2,9 @@
 
 <navigationMobile v-if="mobileView" />
 <div class="content" :class="{'open':showNav}">
-  <div id="navigation-icon" @click="commShowNav" v-if="mobileView">
-    <i class="fas fa-bars"></i>
-  </div>
+  
+    <fa id="navigation-icon" icon="bars" @click="commShowNav" v-if="mobileView"/>
+  
 
   <nav :class="{navFixed:navFixIsActve}" v-if="!mobileView">
     <router-link to="/">Accueil</router-link> |
@@ -14,7 +14,7 @@
     <router-link to="/accomp">Accompagnements</router-link> |
     <router-link to="/about">Contact</router-link>
   </nav>
-
+  
   <router-view v-slot="{ Component, route }">
       <Transition name="fade" mode="out-in">
         <div :key="route.name">  
@@ -22,6 +22,7 @@
         </div>
       </Transition>
     </router-view>
+    <br>
     
 </div>
 </template>
@@ -29,14 +30,12 @@
 <script>
 import { mapState } from "vuex"
 import navigationMobile from '@/components/navigationMobile.vue'
-
   
-
   export default{
     data(){
       return {
         navFixIsActve:false,
-        mobileView:false,
+        
         resolution:750
       }
     },
@@ -44,33 +43,38 @@ import navigationMobile from '@/components/navigationMobile.vue'
       navigationMobile,
     },
     computed: {
-      ...mapState(['showNav']),
+      ...mapState(['showNav','mobileView']),
       
     },
     methods: {
       commShowNav(){
         this.$store.commit('COMMUT_SHOWNAV')
       },
+      commMobileView(){
+        this.$store.commit('COMMUT_MOBILEVIEW')
+      },
       handleView(){
-        this.mobileView = window.innerWidth < this.resolution ;
-        if (this.mobileView==false && this.$store.state.showNav==true){
-          this.commShowNav()
+        this.$store.state.mobileView = window.innerWidth < this.resolution ;
+        if (this.$store.state.mobileView==false && this.$store.state.showNav==true){
+          this.commShowNav();
+          this.commMobileView();
         }
       },
-      
-    },
-    mounted() {
-      this.handleView(),
-      window.addEventListener('resize',()=>{
-      this.handleView()
-      });
-      document.addEventListener('scroll',()=>{
+      handleNavViewScroll(){
         if (window.scrollY> 10)
         this.navFixIsActve=true;
         else
         this.navFixIsActve=false;
-      })
-
+      },      
+    },
+    mounted() {
+      this.handleView(),
+      window.addEventListener('resize',this.handleView);
+      document.addEventListener('scroll',this.handleNavViewScroll);
+    },
+    beforeUnmount() {
+      window.removeEventListener('resize',this.handleView);
+      document.removeEventListener('scroll',this.handleNavViewScroll);
     },
     
   }
@@ -80,19 +84,18 @@ import navigationMobile from '@/components/navigationMobile.vue'
 @import './assets/style.scss' ;
 
 .fade-enter-active  {
-transition: 680ms ease-in-out;
+  transition: 680ms ease-in-out;
 }
 .fade-leave-active {
-transition: 590ms cubic-bezier(.62,-0.01,.86,.39);
-
+  transition: 590ms cubic-bezier(.62,-0.01,.86,.39);
 }
 .fade-enter-from  {
-opacity: 0;
-transform: scale(0.01);
+  opacity: 0;
+  transform: scale(0.01);
 }
 .fade-leave-to {
-   opacity: 0;
-transform:  scale(0.01);
+  opacity: 0;
+  transform:  scale(0.01);
 }
 .content {
   position : absolute;
@@ -110,7 +113,6 @@ transform:  scale(0.01);
 }
 .open{
   transform: translateX(300px); 
-  
 }
 #app {
   font-family:  Geneva, Tahoma, sans-serif,arial, Times, serif;
@@ -121,18 +123,15 @@ transform:  scale(0.01);
 }
 
 #navigation-icon{
-  z-index: 1;
-  
+  z-index: 10;
   font-size: xx-large;
-  width: fit-content;
-  height: fit-content;
   cursor: pointer;
   position: absolute;
+  left:25px;
+  top: 10px;
   top:25px;
-  i {
-    font-size: 3rem;
-  }
-
+  font-size: 3rem;
+  
 }
 .navFixed{
   position:fixed;
@@ -145,6 +144,9 @@ transform:  scale(0.01);
   z-index: 5;
   background: rgb(231, 229, 229);
   transition:all ease 600ms;
+  a.router-link-exact-active{
+    color:rgb(67, 117, 211);
+  }
   
 }
 nav {
@@ -160,16 +162,16 @@ nav {
     cursor: pointer;
     text-decoration: none;
     font-size: 18px;
-    font-weight: 100;
+    font-weight: 500;
     color: #15191a;
     &:hover{
       text-decoration: underline;
     }
 
     &.router-link-exact-active {
-      font-size: 18px;
-      font-weight: 900;
-      
+      color:beige;
+      text-decoration:none;
+      cursor: default;
     }
   }
 }

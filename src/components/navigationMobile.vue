@@ -9,16 +9,20 @@
             <li><router-link @click="commShowNav" to="/accomp">Accompagnements</router-link></li>
             <li><router-link @click="commShowNav" to="/about">Contact</router-link></li>
         </ul>
-    
+        <socialMedia />
     </div>
     
 </template>
 
 <script>
+import socialMedia from '@/components/socialMedia.vue'
 import { mapState } from "vuex"
 
 export default {
     name:'navigationMobile',
+    components:{
+        socialMedia
+    },
     computed: {
         ...mapState(['showNav']),
     },
@@ -51,8 +55,9 @@ export default {
                 text-decoration:  underline;
             }
             &.router-link-exact-active {
-                
+                text-decoration:  none;
                 color: dodgerblue;
+                cursor: default;
             }
             
         }
