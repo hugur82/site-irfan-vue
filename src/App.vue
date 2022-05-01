@@ -16,13 +16,14 @@
   </nav>
   
   <router-view v-slot="{ Component, route }">
-      <Transition name="fade" mode="out-in">
-        <div :key="route.name">  
-          <component :is="Component"></component>
-        </div>
-      </Transition>
-    </router-view>
-    <br>
+    <Transition name="fade" mode="out-in">
+      <div :key="route.name">  
+        <component :is="Component"></component>
+      </div>
+    </Transition>
+  </router-view>
+  <br>
+  <myFooter />
     
 </div>
 </template>
@@ -30,17 +31,17 @@
 <script>
 import { mapState } from "vuex"
 import navigationMobile from '@/components/navigationMobile.vue'
+import myFooter from "./components/myFooter.vue"
   
   export default{
     data(){
       return {
         navFixIsActve:false,
-        
         resolution:750
       }
     },
     components:{
-      navigationMobile,
+      navigationMobile, myFooter
     },
     computed: {
       ...mapState(['showNav','mobileView']),

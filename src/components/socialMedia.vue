@@ -42,10 +42,12 @@ a {
 }
 
 .forComputer{
-   background: rgba(202, 203, 224, 0.466);
+   background: rgba(157, 159, 214, 0.562);
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    
+    width:400px;
+   
     height:6rem;
     display:flex;
     justify-content: space-evenly;

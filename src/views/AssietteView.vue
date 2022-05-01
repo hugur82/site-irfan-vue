@@ -1,6 +1,6 @@
 <template>
 <div class="viewContainer">
-  <h1>This is Assiettes page</h1>
+  <h1>Nos assiètes</h1>
   <div class="containerCard">
     <compCard v-for="itemAssiette,idx of this.$store.getters.getAssiette" 
     :key="idx" 

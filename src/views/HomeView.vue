@@ -1,4 +1,5 @@
 <template>
+
   <div class="viewContainer">
   <div class="containerImgAcc">
     <div class="descAcc">
