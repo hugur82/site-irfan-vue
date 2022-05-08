@@ -35,10 +35,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/style.scss' ;
 
 #navigationMobile{
     padding: 15px 0 0 0 ;
     position:fixed;
+    font-family:  'Permanent Marker', cursive, Geneva, Tahoma;
 
     ul {
         text-decoration: none;
@@ -46,7 +48,7 @@ export default {
         width: 200px;
         padding-left: 40px;
         a{
-            color: rgb(241, 241, 241);
+            color: $colorOrange;
             font-size: x-large;
             font-weight: 500;
             text-decoration: none;
@@ -56,7 +58,7 @@ export default {
             }
             &.router-link-exact-active {
                 text-decoration:  none;
-                color: dodgerblue;
+                color: $activeLinkWhite;
                 cursor: default;
             }
             

@@ -35,17 +35,17 @@ export default{
 </script>
 
 <style lang="scss" scoped>
-
+@import '../assets/style.scss' ;
 
 a {
     text-decoration: none;
 }
 
 .forComputer{
-   background: rgba(157, 159, 214, 0.562);
+   background: $colorBordeauxShadow;
     margin-left: auto;
     margin-right: auto;
-    
+    border-radius: 15px;
     width:400px;
    
     height:6rem;
@@ -62,7 +62,7 @@ a {
     justify-content: space-evenly;
 }
 .fab {
-    color:gold;
+    color:$activeLinkWhite;
     transition: all 0.5s;
     &:hover{
         transform:scale(1.3);

@@ -7,11 +7,11 @@
   
 
   <nav :class="{navFixed:navFixIsActve}" v-if="!mobileView">
-    <router-link to="/">Accueil</router-link> |
-    <router-link to="/sandwich">Sandwichs</router-link> |
-    <router-link to="/pizzaPide">Pizzas and Pides</router-link> |
-    <router-link to="/assiette">Assièttes</router-link> |
-    <router-link to="/accomp">Accompagnements</router-link> |
+    <router-link to="/">Accueil</router-link> 
+    <router-link to="/sandwich">Sandwichs</router-link> 
+    <router-link to="/pizzaPide">Pizzas and Pides</router-link> 
+    <router-link to="/assiette">Assièttes</router-link> 
+    <router-link to="/accomp">Accompagnements</router-link> 
     <router-link to="/about">Contact</router-link>
   </nav>
   
@@ -106,7 +106,7 @@ import myFooter from "./components/myFooter.vue"
   width: auto;
   min-height:100vh ;
   padding: 0px 20px;
-  background: rgb(44,126,238);
+  background: $colorBordeaux;
   border-radius: 30px;
   box-shadow: 2px 2px 2px 1px rgba(170, 167, 218, 0.2);
   transition: 900ms cubic-bezier(.62,.55,.74,1.33);
@@ -116,7 +116,7 @@ import myFooter from "./components/myFooter.vue"
   transform: translateX(300px); 
 }
 #app {
-  font-family:  Geneva, Tahoma, sans-serif,arial, Times, serif;
+  font-family:   'Courgette', cursive , Tahoma, sans-serif,arial, Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -135,42 +135,52 @@ import myFooter from "./components/myFooter.vue"
   
 }
 .navFixed{
+  
   position:fixed;
   margin-top:0px;
+  border-bottom: 1px solid $activeLinkWhite;
+  align-items: center;
   top:0px;
   left:0px;
   right:0px;
+  padding:  25px 10px 0px 10px;
   max-width:none;
   border-radius: 0px;
+  height:50px;
   z-index: 5;
-  background: rgb(231, 229, 229);
+  background: $colorBordeauxShadowNoOpacity;
   transition:all ease 600ms;
   a.router-link-exact-active{
-    color:rgb(67, 117, 211);
+    color:$activeLinkWhite;
   }
   
 }
 nav {
+  font-family:  'Permanent Marker', cursive, Geneva, Tahoma;
   margin: 10px auto 0px auto;
   padding: 10px ;
-  background: rgba(151, 167, 212, 0.507);
+  background: $colorBordeauxShadow;
+  
   max-width: 850px;
   border-radius: 25px;
   cursor: default;
   transition:all ease 600ms;
+  
+  
 
   a {
     cursor: pointer;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    color: #15191a;
+    padding: 5px;
+    font-size: 17px;
+    transition:all ease 600ms;
+    color: $colorOrange;
     &:hover{
       text-decoration: underline;
     }
 
     &.router-link-exact-active {
-      color:beige;
+      color:$activeLinkWhite;
       text-decoration:none;
       cursor: default;
     }

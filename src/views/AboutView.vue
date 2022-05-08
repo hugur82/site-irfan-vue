@@ -25,17 +25,22 @@
 </template>
 
 <script>
+
  import socialMedia from '@/components/socialMedia.vue'
  import { mapState } from 'vuex' 
+
+
 
 export default {
   name:"AboutView",
   components:{
     socialMedia
   }, 
+ 
   computed: {
-    ...mapState(['mobileView'])
-  },
+       ...mapState(['mobileView']),
+      },
+ 
  }
 </script>
 
@@ -47,13 +52,6 @@ a{
 table{
  border-spacing: 8px;
 }
-tr{
-   transition: all 1s ease;
-}
-tr:hover{
 
-  transition: all 1s ease;
-  font-weight: 800;
-}
 
 </style>
