@@ -1,16 +1,16 @@
 <template>
 
 <navigationMobile v-if="mobileView" />
+    
+  
 <div class="content" :class="{'open':showNav}">
-  
-    <fa id="navigation-icon" icon="bars" @click="commShowNav" v-if="mobileView"/>
-  
+  <fa id="navigation-icon" icon="bars" @click="commShowNav" v-if="mobileView"/>
 
   <nav :class="{navFixed:navFixIsActve}" v-if="!mobileView">
     <router-link to="/">Accueil</router-link> 
     <router-link to="/sandwich">Sandwichs</router-link> 
     <router-link to="/pizzaPide">Pizzas and Pides</router-link> 
-    <router-link to="/assiette">Assièttes</router-link> 
+    <router-link to="/assiette">Assiettes</router-link> 
     <router-link to="/accomp">Accompagnements</router-link> 
     <router-link to="/about">Contact</router-link>
   </nav>
@@ -85,10 +85,10 @@ import myFooter from "./components/myFooter.vue"
 @import './assets/style.scss' ;
 
 .fade-enter-active  {
-  transition: 680ms ease-in-out;
+  transition: 580ms ease-in-out;
 }
 .fade-leave-active {
-  transition: 590ms cubic-bezier(.62,-0.01,.86,.39);
+  transition: 490ms cubic-bezier(.62,-0.01,.86,.39);
 }
 .fade-enter-from  {
   opacity: 0;
@@ -109,7 +109,7 @@ import myFooter from "./components/myFooter.vue"
   background: $colorBordeaux;
   border-radius: 30px;
   box-shadow: 2px 2px 2px 1px rgba(170, 167, 218, 0.2);
-  transition: 900ms cubic-bezier(.62,.55,.74,1.33);
+  transition: 700ms cubic-bezier(.62,.55,.74,1.33);
   
 }
 .open{
@@ -119,23 +119,23 @@ import myFooter from "./components/myFooter.vue"
   font-family:   'Courgette', cursive , Tahoma, sans-serif,arial, Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: rgb(53, 50, 47);
+  
+  color: $backgroundBlack;
 }
 
 #navigation-icon{
   z-index: 10;
   font-size: xx-large;
   cursor: pointer;
-  position: absolute;
-  left:25px;
-  top: 10px;
+  position: sticky;
+  margin-top: 0px;
+  margin-left: 0px;
+  padding: 0px;
   top:25px;
+  left:25px;
   font-size: 3rem;
-  
 }
 .navFixed{
-  
   position:fixed;
   margin-top:0px;
   border-bottom: 1px solid $activeLinkWhite;
@@ -156,18 +156,16 @@ import myFooter from "./components/myFooter.vue"
   
 }
 nav {
+  text-align:center;
   font-family:  'Permanent Marker', cursive, Geneva, Tahoma;
   margin: 10px auto 0px auto;
   padding: 10px ;
   background: $colorBordeauxShadow;
-  
   max-width: 850px;
   border-radius: 25px;
   cursor: default;
   transition:all ease 600ms;
   
-  
-
   a {
     cursor: pointer;
     text-decoration: none;
@@ -175,6 +173,7 @@ nav {
     font-size: 17px;
     transition:all ease 600ms;
     color: $colorOrange;
+    
     &:hover{
       text-decoration: underline;
     }

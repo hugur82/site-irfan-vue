@@ -12,10 +12,11 @@ export default {
     name:"myFooter"
 }
 </script>
-o
+
 <style lang="scss" scoped>
 
 .piedPage {
+    
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,6 +29,7 @@ o
 @media screen and (max-width: 750px){
     .piedPage {
         flex-direction:column ;
+        align-items: center;
     }
 
 }

@@ -5,7 +5,7 @@
             <li><router-link @click="commShowNav" to="/">Accueil</router-link></li>
             <li><router-link @click="commShowNav" to="/sandwich">Sandwichs</router-link></li>
             <li><router-link @click="commShowNav" to="/pizzaPide">Pizzas and Pides</router-link></li>
-            <li><router-link @click="commShowNav" to="/assiette">Assièttes</router-link></li>
+            <li><router-link @click="commShowNav" to="/assiette">Assiettes</router-link></li>
             <li><router-link @click="commShowNav" to="/accomp">Accompagnements</router-link></li>
             <li><router-link @click="commShowNav" to="/about">Contact</router-link></li>
         </ul>

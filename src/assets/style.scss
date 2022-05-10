@@ -5,12 +5,17 @@ $colorBordeauxShadow:rgba(79,21,21,0.5);
 $colorBordeauxShadowNoOpacity:rgb(102, 27, 27);
 $colorOrange:rgb(219, 99, 43);
 $activeLinkWhite:ghostwhite;
+$backgroundBlack: #181717de;
 
 body {
     width: 100%;
-     margin: 0px;
+    margin: 0px;
     padding: 0px;
-    background: #181717de;
+    background: $backgroundBlack;
+    
+}
+h1,p {
+    text-align: center;
 }
 
 .viewContainer{
@@ -25,7 +30,7 @@ body {
     display: flex;
     flex-wrap:  wrap;
     justify-content:space-around ;
-    gap:40px;
+    gap:30px;
     margin-left: auto;
     margin-right: auto;
     
@@ -36,6 +41,7 @@ body {
     
 }
 .carte{
+    text-align: center;
     z-index: 0;
     width: 210px;
     height: 250px;
@@ -43,14 +49,14 @@ body {
     color:$colorOrange;
     display:grid;
     grid-template: repeat(2,70px) 30px repeat(2,40px)  / repeat(3,70px);
-    border-radius: 14px;
-    border:ridge 3px rgba(12, 11, 11, 1);
-    box-shadow: 4px 4px 5px rgba(54, 54, 54, 0.685);
+    border-radius: 10px;
+    border:ridge 4px rgba(12, 11, 11, 1);
+    box-shadow: 4px 4px 5px rgba(19,19,19, 0.885);
     transition: all 400ms ease-in-out;
     &:hover{
         transform: scale(1.2);
         z-index:2 !important;
-        box-shadow: 58px 38px 5px rgba(54, 54, 54, 0.385);
+        box-shadow: 58px 38px 5px rgba(19, 19, 19, 0.842);
     }
 
 }
@@ -67,7 +73,6 @@ body {
 }
 .cardDesc{
     grid-area: 4/1/6/4;
-    
     font-size: 35px;
 }
 
@@ -81,10 +86,10 @@ body {
         transform:scale(1.1);
     }
     .viewContainer{
-        margin: 80px 10px;
+        margin: 10px ;
     }
     .containerCard{
-        gap: 10px;
+        row-gap: 1px;
     }
 
 }
