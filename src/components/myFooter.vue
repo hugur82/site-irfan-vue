@@ -30,6 +30,7 @@ export default {
     .piedPage {
         flex-direction:column ;
         align-items: center;
+        width: 90%;
     }
 
 }
