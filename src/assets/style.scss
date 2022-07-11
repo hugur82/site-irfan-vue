@@ -7,6 +7,7 @@ $colorOrange:rgb(219, 99, 43);
 $activeLinkWhite:ghostwhite;
 $backgroundBlack: #181717de;
 
+
 body {
     width: 100%;
     margin: 0px;
@@ -53,12 +54,6 @@ h1,p {
     border:ridge 4px rgba(12, 11, 11, 1);
     box-shadow: 4px 4px 5px rgba(19,19,19, 0.885);
     transition: all 400ms ease-in-out;
-    &:hover{
-        transform: scale(1.2);
-        z-index:2 !important;
-        box-shadow: 58px 38px 5px rgba(19, 19, 19, 0.842);
-    }
-
 }
 
 .cardImg img{
@@ -79,12 +74,7 @@ h1,p {
 
 /*-------------Responsive smartphone-----------*/
 @media screen and (max-width:750px)  {
-    .carte{
-        transform: scale(0.85);
-    }
-    .carte:hover {
-        transform:scale(1.1);
-    }
+   
     .viewContainer{
         margin: 10px ;
     }

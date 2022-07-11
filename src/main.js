@@ -7,10 +7,16 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab,  } from '@fortawesome/free-brands-svg-icons'
 import App from './App.vue'
+import {MotionPlugin} from '@vueuse/motion'
+
+
+
 
 library.add(fas, fab);
-createApp(App)
+const app = createApp(App)
 .component('fa',FontAwesomeIcon)
 .use(store)
 .use(router)
+app.use(MotionPlugin)
 .mount('#app');
+

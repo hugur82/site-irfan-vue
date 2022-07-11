@@ -1,5 +1,9 @@
 <template>
-    <div class="piedPage">
+    <div class="piedPage"
+    v-motion
+    :initial="{opacity:0, x : 200, scale : 0.70}"
+    :visible="{opacity:1, x : 0, scale : 0.9}"
+    >
     <span>Restaurant Chez Irfan</span>
     <span>20 Rue de la Mairie, 67760 Gambsheim</span>
     <span>03 88 51 52 52</span>

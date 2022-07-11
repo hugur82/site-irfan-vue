@@ -119,7 +119,6 @@ import myFooter from "./components/myFooter.vue"
   font-family:   'Courgette', cursive , Tahoma, sans-serif,arial, Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
   color: $backgroundBlack;
 }
 
